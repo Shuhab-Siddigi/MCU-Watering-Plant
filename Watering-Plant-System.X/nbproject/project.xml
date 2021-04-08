@@ -6,10 +6,11 @@
             <name>Watering-Plant-System</name>
             <creation-uuid>759ca3b2-8ed5-4d40-98e5-c864958de0de</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions/>
+            <c-extensions>c</c-extensions>
             <cpp-extensions/>
             <header-extensions/>
             <asminc-extensions/>
+            <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList/>
             <confList>
@@ -18,7 +19,6 @@
                     <type>2</type>
                 </confElem>
             </confList>
-            <sourceEncoding>ISO-8859-1</sourceEncoding>
             <formatting>
                 <project-formatting-style>false</project-formatting-style>
             </formatting>
