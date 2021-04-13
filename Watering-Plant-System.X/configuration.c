@@ -1,11 +1,3 @@
-/*
- * File:   Configuration.c
- * Author: shuhabsiddigi
- *
- * Created on April 13, 2021, 11:45 AM
- */
-
-
 #include "configuration.h"
 
 // CONFIG4

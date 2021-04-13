@@ -1,11 +1,3 @@
-/*
- * File:   button.c
- * Author: shuhabsiddigi
- *
- * Created on April 13, 2021, 12:09 PM
- */
-
-
 #include "button.h"
 
 
