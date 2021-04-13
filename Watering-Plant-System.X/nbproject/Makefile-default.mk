@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c configuration.c floatswitch.c led.c button.c adc.c
+SOURCEFILES_QUOTED_IF_SPACED=adc.c button.c configuration.c floatswitch.c led.c main.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/configuration.o ${OBJECTDIR}/floatswitch.o ${OBJECTDIR}/led.o ${OBJECTDIR}/button.o ${OBJECTDIR}/adc.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/configuration.o.d ${OBJECTDIR}/floatswitch.o.d ${OBJECTDIR}/led.o.d ${OBJECTDIR}/button.o.d ${OBJECTDIR}/adc.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/adc.o ${OBJECTDIR}/button.o ${OBJECTDIR}/configuration.o ${OBJECTDIR}/floatswitch.o ${OBJECTDIR}/led.o ${OBJECTDIR}/main.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/adc.o.d ${OBJECTDIR}/button.o.d ${OBJECTDIR}/configuration.o.d ${OBJECTDIR}/floatswitch.o.d ${OBJECTDIR}/led.o.d ${OBJECTDIR}/main.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/configuration.o ${OBJECTDIR}/floatswitch.o ${OBJECTDIR}/led.o ${OBJECTDIR}/button.o ${OBJECTDIR}/adc.o
+OBJECTFILES=${OBJECTDIR}/adc.o ${OBJECTDIR}/button.o ${OBJECTDIR}/configuration.o ${OBJECTDIR}/floatswitch.o ${OBJECTDIR}/led.o ${OBJECTDIR}/main.o
 
 # Source Files
-SOURCEFILES=main.c configuration.c floatswitch.c led.c button.c adc.c
+SOURCEFILES=adc.c button.c configuration.c floatswitch.c led.c main.c
 
 
 
@@ -95,11 +95,17 @@ MP_LINKER_FILE_OPTION=,--script=p24FJ128GA204.gld
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/main.o: main.c  .generated_files/3223470d5848915aa9ffef037655766e905d1922.flag .generated_files/5809f633f27e6165375d0ba3b2271943197e7c71.flag
+${OBJECTDIR}/adc.o: adc.c  .generated_files/a9ead500e95488f97acd5bc50cbc2fac71aa0c36.flag .generated_files/5809f633f27e6165375d0ba3b2271943197e7c71.flag
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.o.d 
-	@${RM} ${OBJECTDIR}/main.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	@${RM} ${OBJECTDIR}/adc.o.d 
+	@${RM} ${OBJECTDIR}/adc.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  adc.c  -o ${OBJECTDIR}/adc.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/adc.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/button.o: button.c  .generated_files/a3d7b30874f1d3b0d18ca05439a09589f9b98d55.flag .generated_files/5809f633f27e6165375d0ba3b2271943197e7c71.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/button.o.d 
+	@${RM} ${OBJECTDIR}/button.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  button.c  -o ${OBJECTDIR}/button.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/button.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 ${OBJECTDIR}/configuration.o: configuration.c  .generated_files/15daeedaa72ee0146d8b5f267e9b746f9e0c78e3.flag .generated_files/5809f633f27e6165375d0ba3b2271943197e7c71.flag
 	@${MKDIR} "${OBJECTDIR}" 
@@ -119,24 +125,24 @@ ${OBJECTDIR}/led.o: led.c  .generated_files/2a900ca7dfb330beae46f9ad67cceb15c40b
 	@${RM} ${OBJECTDIR}/led.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  led.c  -o ${OBJECTDIR}/led.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/led.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/button.o: button.c  .generated_files/a3d7b30874f1d3b0d18ca05439a09589f9b98d55.flag .generated_files/5809f633f27e6165375d0ba3b2271943197e7c71.flag
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/button.o.d 
-	@${RM} ${OBJECTDIR}/button.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  button.c  -o ${OBJECTDIR}/button.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/button.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/adc.o: adc.c  .generated_files/a9ead500e95488f97acd5bc50cbc2fac71aa0c36.flag .generated_files/5809f633f27e6165375d0ba3b2271943197e7c71.flag
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/adc.o.d 
-	@${RM} ${OBJECTDIR}/adc.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  adc.c  -o ${OBJECTDIR}/adc.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/adc.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-else
-${OBJECTDIR}/main.o: main.c  .generated_files/763f9e10c1ee457fc4e811cc9a08820ae8102ec6.flag .generated_files/5809f633f27e6165375d0ba3b2271943197e7c71.flag
+${OBJECTDIR}/main.o: main.c  .generated_files/3223470d5848915aa9ffef037655766e905d1922.flag .generated_files/5809f633f27e6165375d0ba3b2271943197e7c71.flag
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.o.d 
 	@${RM} ${OBJECTDIR}/main.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+else
+${OBJECTDIR}/adc.o: adc.c  .generated_files/6f010789af607179d19ad29349813ef65d557f12.flag .generated_files/5809f633f27e6165375d0ba3b2271943197e7c71.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/adc.o.d 
+	@${RM} ${OBJECTDIR}/adc.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  adc.c  -o ${OBJECTDIR}/adc.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/adc.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/button.o: button.c  .generated_files/d38da671d35e40b5845207284e91253735ce9c3.flag .generated_files/5809f633f27e6165375d0ba3b2271943197e7c71.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/button.o.d 
+	@${RM} ${OBJECTDIR}/button.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  button.c  -o ${OBJECTDIR}/button.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/button.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 ${OBJECTDIR}/configuration.o: configuration.c  .generated_files/97cf49b32677e812b26b4efa8c13d4936fe35428.flag .generated_files/5809f633f27e6165375d0ba3b2271943197e7c71.flag
 	@${MKDIR} "${OBJECTDIR}" 
@@ -156,17 +162,11 @@ ${OBJECTDIR}/led.o: led.c  .generated_files/d3159d157c47aff6c924f40d212fd960d48e
 	@${RM} ${OBJECTDIR}/led.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  led.c  -o ${OBJECTDIR}/led.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/led.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/button.o: button.c  .generated_files/d38da671d35e40b5845207284e91253735ce9c3.flag .generated_files/5809f633f27e6165375d0ba3b2271943197e7c71.flag
+${OBJECTDIR}/main.o: main.c  .generated_files/763f9e10c1ee457fc4e811cc9a08820ae8102ec6.flag .generated_files/5809f633f27e6165375d0ba3b2271943197e7c71.flag
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/button.o.d 
-	@${RM} ${OBJECTDIR}/button.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  button.c  -o ${OBJECTDIR}/button.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/button.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/adc.o: adc.c  .generated_files/6f010789af607179d19ad29349813ef65d557f12.flag .generated_files/5809f633f27e6165375d0ba3b2271943197e7c71.flag
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/adc.o.d 
-	@${RM} ${OBJECTDIR}/adc.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  adc.c  -o ${OBJECTDIR}/adc.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/adc.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
 
