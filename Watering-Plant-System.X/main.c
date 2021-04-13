@@ -1,3 +1,10 @@
+/*
+ * File:   main.c
+ * Author: shuhabsiddigi
+ *
+ * Created on April 8, 2021, 12:01 PM
+ */
+
 #include "configuration.h"
 
 int main() {
