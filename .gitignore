@@ -58,3 +58,5 @@ dkms.conf
 /UART-PIC24.X/dist/
 /UART-PIC24-GA204.X/build/
 /UART-PIC24-GA204.X/dist/
+/ADC-PIC24.X/build/
+/ADC-PIC24.X/dist/
