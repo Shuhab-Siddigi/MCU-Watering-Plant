@@ -9,6 +9,7 @@
       <itemPath>led.h</itemPath>
       <itemPath>button.h</itemPath>
       <itemPath>constants.h</itemPath>
+      <itemPath>adc.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -22,6 +23,7 @@
       <itemPath>floatswitch.c</itemPath>
       <itemPath>led.c</itemPath>
       <itemPath>button.c</itemPath>
+      <itemPath>adc.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

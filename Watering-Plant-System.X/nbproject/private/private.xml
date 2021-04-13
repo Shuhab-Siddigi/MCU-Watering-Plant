@@ -2,16 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="03">
-            <file>file:/home/shuhabsiddigi/Documents/Kurser/MCU/MCU-Watering-Plant/Watering-Plant-System.X/floatswitch.c</file>
-            <file>file:/home/shuhabsiddigi/Documents/Kurser/MCU/MCU-Watering-Plant/Watering-Plant-System.X/constants.h</file>
-            <file>file:/home/shuhabsiddigi/Documents/Kurser/MCU/MCU-Watering-Plant/Watering-Plant-System.X/configuration.c</file>
-            <file>file:/home/shuhabsiddigi/Documents/Kurser/MCU/MCU-Watering-Plant/Watering-Plant-System.X/led.h</file>
-            <file>file:/home/shuhabsiddigi/Documents/Kurser/MCU/MCU-Watering-Plant/Watering-Plant-System.X/floatswitch.h</file>
-            <file>file:/home/shuhabsiddigi/Documents/Kurser/MCU/MCU-Watering-Plant/Watering-Plant-System.X/led.c</file>
-            <file>file:/home/shuhabsiddigi/Documents/Kurser/MCU/MCU-Watering-Plant/Watering-Plant-System.X/button.h</file>
-            <file>file:/home/shuhabsiddigi/Documents/Kurser/MCU/MCU-Watering-Plant/Watering-Plant-System.X/configuration.h</file>
-            <file>file:/home/shuhabsiddigi/Documents/Kurser/MCU/MCU-Watering-Plant/Watering-Plant-System.X/main.c</file>
-        </group>
+        <group name="03"/>
     </open-files>
 </project-private>

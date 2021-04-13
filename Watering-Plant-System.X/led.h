@@ -16,6 +16,14 @@
 #define LEDRED_SetLow()           (_LATC5 = LOW)
 #define LEDRED_SetHigh()          (_LATC5 = HIGH)
 
+#define LEDGREEN_SetDigitalOutput() (_TRISC6 = OUTPUT)
+#define LEDGREEN_SetLow()           (_LATC6 = LOW)
+#define LEDGREEN_SetHigh()          (_LATC6 = HIGH)
+
+#define LEDBLUE_SetDigitalOutput() (_TRISC7 = OUTPUT)
+#define LEDBLUE_SetLow()           (_LATC7 = LOW)
+#define LEDBLUE_SetHigh()          (_LATC7 = HIGH)
+
 
 void init_led();
 

@@ -57,4 +57,5 @@ void init()
     init_floatswitch();
     init_led();
     init_button();
+    init_adc ();
 }
