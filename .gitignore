@@ -52,3 +52,9 @@ Mkfile.old
 dkms.conf
 /Watering-Plant-System.X/build/
 /Watering-Plant-System.X/dist/
+/ADC-MCC.X/build/
+/ADC-MCC.X/dist/
+/UART-PIC24.X/build/
+/UART-PIC24.X/dist/
+/UART-PIC24-GA204.X/build/
+/UART-PIC24-GA204.X/dist/

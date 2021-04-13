@@ -1,0 +1,102 @@
+
+void UART_example_WRITE_STRING(char *str)
+{
+    uint8_t count = 0; 
+	
+    while (count < strlen(str)){
+        uart[UART].Write(str[count]);
+        count++;
+    }   
+}
+
+void UART_example_PRINTF(void)
+{
+    uint8_t count = 0;
+    
+    while (++count<4)
+        printf("Hello World! %d\n",count);
+}
+
+
+static uint8_t rx[16];
+char *string = "Transmit test\n";
+
+void UART_example_READ(void)
+{
+    
+    
+    printf("Receive test: Type a message then press enter (max 16 chars):");
+    
+    //Wait until data is ready
+    while(uart[UART].DataReady()==0){
+        ;
+    }
+        //Receive the typed word/information
+    int index = 0;
+    
+    memset(rx, 0, sizeof(rx));
+    for (int i = 0; i < sizeof(rx); i++) {
+	rx[i] = uart[UART].Read(); // Blocks until character is available
+        if (rx[i] == '\n'){ 
+            index = i;
+            break;
+        }
+    }
+    
+    //Echo back the information
+    printf("You typed: ");
+    for (int i = 0; i < index; i++) {
+	printf("%c",rx[i]);
+    }
+}
+
+// UART 1 
+
+#define SYS_FREQ 4000000UL //Clock Frequency
+#define FCY (SYS_FREQ/2) //Cycle Frequency
+
+// This library is used for delay functions
+#include <libpic30.h>
+
+
+char buff[32];
+char* msg;
+int index = 0;
+int i = 0;
+
+void UART_SEND(char *str)
+{  
+    while(!UART1_IsTxReady()){;}
+    
+    for(i = 0; i <strlen(str); i++){
+        UART1_Write(str[i]);
+    }      
+}
+
+
+
+char * UART_READ(void)
+{     
+       while(!UART1_IsRxReady()){;}
+        
+       // Flush array to all 0s
+        memset(buff, 0, sizeof(buff));
+
+        //Receive the typed word/information
+        for (i = 0; i < sizeof(buff); i++) {
+            
+            // Stop if there is a newline
+            if (buff[i] == '\0' || buff[i] == '\n'){ 
+                break;
+            }else{
+            buff[i] = UART1_Read();    
+            }
+        }
+        return buff;
+}
+
+U1TXREG 0504 hvor 0504 er en byte størrelse
+U1RXREG 0506
+
+
+000200h
