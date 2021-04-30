@@ -4,18 +4,12 @@
 
 #include "constants.h"
 
-#define FLOATSWITCH_SetDigitalInput()(_TRISA8 = DIGITAL)
-#define FLOATSWITCH_GetValue()  _RA8
 
- #define floatswitch_FlagClearISR()     (IFS0bits.INT0IF = 0)
-
-void floatswitchCallbackISR();
-
+void set_floatswitchCallback(void(*cb )());
 void init_floatswitch();
 
 
-
-
+#define floatswitch_FlagClearISR()     (IFS0bits.INT0IF = 0)
 
 #define floatswitch_InterruptDisable()  (IEC0bits.INT0IE = 0)
 #define floatswitch_InterruptEnable()   (IEC0bits.INT0IE = 1)

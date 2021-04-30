@@ -2,16 +2,21 @@
 #define BUTTON_H_
 
 
-#include "constants.h"
-
-#define S1_SetDigitalInput()(_TRISC9 = INPUT)
-#define S1_GetValue()         _RC9
-
-#define S2_SetDigitalInput()(_TRISC8 = INPUT)
-#define S2_GetValue()         _RC8
+#include "registerBits.h"
 
 
-void init_button();
+typedef struct
+{
+    volatile uint16_t*  TRIS; //Pointer to &TRISx
+    volatile uint16_t*  PORT; //Pointer to &PORTx
+    uint16_t BTN;               // The Dy port for PORTx.Dy
+} BTN;
+
+extern BTN btn;
+
+void btn_init(BTN btn);
+void btn_SetDigitalInput(BTN btn);
+uint16_t btn_GetValue(BTN btn);
 
 #endif	/* BUTTON_H_ */
 

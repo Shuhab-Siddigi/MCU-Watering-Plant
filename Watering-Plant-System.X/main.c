@@ -5,58 +5,59 @@
  * Created on April 8, 2021, 12:01 PM
  */
 
-#include "configuration.h"
+//#include "configuration.h"
+#include "led.h"
+#include "button.h"
+#include "floatswitch.h"
 
-int main() {
-    
-       
- //   FLOATSWITCH_SetDigitalInput();
-    init();
-    
-    int conversion;
-    
-    while (1) {
+/*BTN btn1;
+LED led1;
+LED led2;
+ * */
 
-        conversion = ADC_GetConversion(POT);
+BTN btn1 = { &TRISA, &PORTC, 8};  // TRISx, PORTx, Dx
+LED led1 = { &TRISA, &LATA, 10}; // PORTx, LATx, Dx
+LED led2 = { &TRISA, &LATA, 9};  // PORTx, LATx, Dx
 
-        if(S1_GetValue() == 0){
-            LED1_SetHigh();
 
-           
-            LEDRED_SetLow();
-            LEDGREEN_SetLow();
-            LEDBLUE_SetLow();
-        }else if(conversion <= 300){
-            LED1_SetLow();
-
-     
-            LEDRED_SetLow();
-            LEDBLUE_SetLow();
-            
-            LEDGREEN_SetHigh();
-        }else if ( conversion > 300 && conversion <= 600){
-            LED1_SetLow();
-
-     
-            LEDRED_SetLow();
-            LEDGREEN_SetLow();
-           
-            LEDBLUE_SetHigh();
-   
-        }else{
-            LED1_SetLow();
-            
-            LEDBLUE_SetLow();
-            LEDGREEN_SetLow();
-   
-            LEDRED_SetHigh();
-        }
-    
-        
-    }
-    return 0;
-
+void floatswitchCB()
+{
+    led_Toggle(led2);
 }
 
+int main()
+{
+    PORTC;
+    /*BTN btn1 = { &TRISA, &PORTC, 8};  // TRISx, PORTx, Dx
+    LED led1 = { &TRISA, &LATA, 10}; // PORTx, LATx, Dx
+    LED led2 = { &TRISA, &LATA, 9};  // PORTx, LATx, Dx
+     * */
+    led_init(led1);
+    led_init(led2);
+    btn_init(btn1);
+    //set_floatswitchCallbackISR(&floatswitchCB);
+    init_floatswitch(&floatswitchCB);
+
+    uint16_t btnState;
+    
+    
+    while (1)
+    {
+        //led_SetHigh(led1);
+        //led_SetHigh(led2);
+        btnState = btn_GetValue(btn1);
+        
+        if(btnState == 1)
+        {
+            led_SetHigh(led1);
+        }
+        else
+        {
+            led_SetLow(led1);
+        }
+    }
+
+    return 0;
+}
 
 

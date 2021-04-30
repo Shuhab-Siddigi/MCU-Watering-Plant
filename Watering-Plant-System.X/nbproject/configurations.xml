@@ -8,8 +8,9 @@
       <itemPath>button.h</itemPath>
       <itemPath>configuration.h</itemPath>
       <itemPath>constants.h</itemPath>
-      <itemPath>floatswitch.h</itemPath>
       <itemPath>led.h</itemPath>
+      <itemPath>registerBits.h</itemPath>
+      <itemPath>floatswitch.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -21,9 +22,10 @@
       <itemPath>adc.c</itemPath>
       <itemPath>button.c</itemPath>
       <itemPath>configuration.c</itemPath>
-      <itemPath>floatswitch.c</itemPath>
       <itemPath>led.c</itemPath>
       <itemPath>main.c</itemPath>
+      <itemPath>registerBits.c</itemPath>
+      <itemPath>floatswitch.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -31,6 +33,9 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
@@ -42,7 +47,7 @@
         <platformTool>PKOBSKDEPlatformTool</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.61</languageToolchainVersion>
-        <platform>2</platform>
+        <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="PIC24F-GA-GB_DFP" vendor="Microchip" version="1.4.141"/>
@@ -206,6 +211,7 @@
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="memories.configurationmemory" value="true"/>
         <property key="memories.dataflash" value="true"/>
         <property key="memories.eeprom" value="true"/>
