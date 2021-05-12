@@ -7,12 +7,17 @@
 
 void (*FloatswitchCallback )(void);
 
-void init_floatswitch()
+void init_floatswitch(void(*cb )())
 {
     floatswitch_FlagClearISR();   
     floatswitch_SetFalingEdge();
     floatswitch_InterruptEnable();
     floatswitch_EnableISR();
+    
+    if(cb != NULL)
+    {
+        FloatswitchCallback = cb;
+    }
 }
 
 void set_floatswitchCallback(void(*cb )())

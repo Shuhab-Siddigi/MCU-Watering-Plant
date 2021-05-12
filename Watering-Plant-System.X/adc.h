@@ -45,6 +45,10 @@ typedef enum
 } ADC1_CHANNEL;
 
 
+//typedef enum{} ADC1_CHANNEL;
+//struct ADC1_CHANNEL_TAG{CHANNEL ACD1_CHANNEL};
+
+
 void init_adc (void);
 void ADC_Start(void);
 void ADC_Stop(void);

@@ -8,7 +8,7 @@
 
 #include "button.h"
 
-void btn_init(BTN btn)
+void init_btn(BTN btn)
 {
     btn_SetDigitalInput(btn);
 }

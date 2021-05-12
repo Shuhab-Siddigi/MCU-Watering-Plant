@@ -14,7 +14,7 @@ typedef struct
 
 extern LED led;
 
-void led_init(LED led);
+void init_led(LED led);
 void led_SetDigitalOutput(LED led);
 void led_SetLow(LED led);
 void led_SetHigh(LED led);

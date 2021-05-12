@@ -1,6 +1,6 @@
 #include "led.h"
 
-void led_init(LED led)
+void init_led(LED led)
 {
     led_SetDigitalOutput(led);
 }

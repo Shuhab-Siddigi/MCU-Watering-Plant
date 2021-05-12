@@ -15,7 +15,7 @@
 //#include "led.h"
 //#include "button.h"
 #include "constants.h"
-#include "adc.h"
+//#include "adc.h"
 
 void init();
 

@@ -14,7 +14,7 @@ typedef struct
 
 extern BTN btn;
 
-void btn_init(BTN btn);
+void init_btn(BTN btn);
 void btn_SetDigitalInput(BTN btn);
 uint16_t btn_GetValue(BTN btn);
 

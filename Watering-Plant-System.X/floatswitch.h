@@ -6,7 +6,7 @@
 
 
 void set_floatswitchCallback(void(*cb )());
-void init_floatswitch();
+void init_floatswitch(void(*cb )());
 
 
 #define floatswitch_FlagClearISR()     (IFS0bits.INT0IF = 0)
