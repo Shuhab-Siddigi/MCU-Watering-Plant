@@ -1,0 +1,9 @@
+<<<<<<< Updated upstream
+ -c -mcpu=$(MP_PROCESSOR_OPTION)      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"/home/shuhabsiddigi/Documents/Kurser/MCU/MCU-Watering-Plant/LCD-PIC24.X/mcc_generated_files/traps.c
+=======
+<<<<<<< Updated upstream:LCD-PIC24.X/.generated_files/b19c9501c5a4dfbaadb78a86536b9b56ad98cde3.flag
+ -c -mcpu=$(MP_PROCESSOR_OPTION)      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"/home/shuhabsiddigi/Documents/Kurser/MCU/MCU-Watering-Plant/LCD-PIC24.X/mcc_generated_files/pin_manager.c
+=======
+ -c -mcpu=$(MP_PROCESSOR_OPTION)      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"/home/shuhabsiddigi/Documents/Kurser/MCU/MCU-Watering-Plant/LCD-PIC24.X/mcc_generated_files/traps.c
+>>>>>>> Stashed changes:LCD-PIC24.X/.generated_files/24959921b592a85e7b4ca4ccc946f5fdf4c43f64.flag
+>>>>>>> Stashed changes
