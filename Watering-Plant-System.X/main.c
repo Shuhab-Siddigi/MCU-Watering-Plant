@@ -3,8 +3,7 @@
 #include "output.h"
 #include "floatswitch.h"
 #include "adc.h"
-#include "uart.h"
-#include "NC.h"
+#include "uart1.h"
 
 /*BTN btn1;
 LED led1;
@@ -85,17 +84,22 @@ int main()
     //init_output(motor);
     //init_output(led1);
     //init_floatswitch(&floatswitchCB);
-
-    UART_SetRxInterruptHandler(&NcApiSupportRxData);
     UART_Initialize();
-
-    SetupNCApi();
-
-    PassthroughNWU();
 
     while (1)
     {
-        if(floatswitchFlag == 0)
+        uint8_t byte = 0xFF;
+        
+        if(UART_ReadFlag())
+        {
+            while(byte != '\r')
+            {
+                byte = UART1_Read();
+            }
+            byte = 0xFF;
+            UART_WriteMessage("hello\r");
+        }
+        /*if(floatswitchFlag == 0)
         {
             //output_SetHigh(motor);
         }
@@ -105,6 +109,7 @@ int main()
         }
         
         //__delay_ms(300);
+        */
     }
 
     return 0;

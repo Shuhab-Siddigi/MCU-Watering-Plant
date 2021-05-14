@@ -10,11 +10,8 @@
       <itemPath>floatswitch.h</itemPath>
       <itemPath>input.h</itemPath>
       <itemPath>output.h</itemPath>
-      <itemPath>uart.h</itemPath>
       <itemPath>configuration.h</itemPath>
-      <itemPath>NC.h</itemPath>
-      <itemPath>NcApi/NeoParser.h</itemPath>
-      <itemPath>NcApi/NcApi.h</itemPath>
+      <itemPath>uart1.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -29,11 +26,8 @@
       <itemPath>floatswitch.c</itemPath>
       <itemPath>input.c</itemPath>
       <itemPath>output.c</itemPath>
-      <itemPath>uart.c</itemPath>
       <itemPath>configuration.c</itemPath>
-      <itemPath>NC.c</itemPath>
-      <itemPath>NcApi/NcApi.c</itemPath>
-      <itemPath>NcApi/NeoParser.c</itemPath>
+      <itemPath>uart1.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
