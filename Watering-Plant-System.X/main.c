@@ -64,31 +64,31 @@ int main()
 
 #include <libpic30.h>
         
-LED motor = {&TRISB, &LATB, 10};
-LED led1 = {&TRISA, &LATA, 10}; // PORTx, LATx, Dx
+OUTPUT motor = {&TRISB, &LATB, 10};
+OUTPUT led1 = {&TRISA, &LATA, 10}; // PORTx, LATx, Dx
 
 int floatswitchFlag = 0;
 
 void floatswitchCB()
 {
     floatswitchFlag ^= 1;
-    led_Toggle(led1);
+    output_Toggle(led1);
 }
 
 int main()
 {
-    init_led(motor);
-    init_led(led1);
+    init_output(motor);
+    init_output(led1);
     init_floatswitch(&floatswitchCB);
     while (1)
     {
         if(floatswitchFlag == 0)
         {
-            //led_SetHigh(motor);
+            //output_SetHigh(motor);
         }
         else
         {
-            led_SetLow(motor);
+            output_SetLow(motor);
         }
         
         //__delay_ms(300);
