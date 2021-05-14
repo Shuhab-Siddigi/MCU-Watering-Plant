@@ -5,7 +5,7 @@
 #include "floatswitch.h"
 //#include "led.h"
 
-void (*FloatswitchCallback )(void);
+void (*FloatswitchCallback)(void);
 
 void init_floatswitch(void(*cb )())
 {

@@ -1,15 +1,10 @@
-/*
- * File:   main.c
- * Author: shuhabsiddigi
- *
- * Created on April 8, 2021, 12:01 PM
- */
-
 //#include "configuration.h"
-#include "led.h"
-#include "button.h"
+#include "input.h"
+#include "output.h"
 #include "floatswitch.h"
 #include "adc.h"
+#include "uart.h"
+#include "NC.h"
 
 /*BTN btn1;
 LED led1;
@@ -75,11 +70,29 @@ void floatswitchCB()
     output_Toggle(led1);
 }
 
+/*void ReadCallback(uint8_t n, uint8_t * msg, uint8_t msgLength)
+{
+    uint16_t i;
+	printf("Raw UART data received: ");
+	for (i=0; i<msgLength; i++)
+		printf( "%02x ", msg[i] );
+	printf("\r\n");
+}
+*/
+
 int main()
 {
-    init_output(motor);
-    init_output(led1);
-    init_floatswitch(&floatswitchCB);
+    //init_output(motor);
+    //init_output(led1);
+    //init_floatswitch(&floatswitchCB);
+
+    UART_SetRxInterruptHandler(&NcApiSupportRxData);
+    UART_Initialize();
+
+    SetupNCApi();
+
+    PassthroughNWU();
+
     while (1)
     {
         if(floatswitchFlag == 0)
@@ -96,5 +109,3 @@ int main()
 
     return 0;
 }
-
-

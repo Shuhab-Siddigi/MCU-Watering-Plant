@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=adc.c button.c configuration.c led.c main.c registerBits.c floatswitch.c
+SOURCEFILES_QUOTED_IF_SPACED=adc.c main.c registerBits.c floatswitch.c input.c output.c uart.c configuration.c NC.c NcApi/NcApi.c NcApi/NeoParser.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/adc.o ${OBJECTDIR}/button.o ${OBJECTDIR}/configuration.o ${OBJECTDIR}/led.o ${OBJECTDIR}/main.o ${OBJECTDIR}/registerBits.o ${OBJECTDIR}/floatswitch.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/adc.o.d ${OBJECTDIR}/button.o.d ${OBJECTDIR}/configuration.o.d ${OBJECTDIR}/led.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/registerBits.o.d ${OBJECTDIR}/floatswitch.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/adc.o ${OBJECTDIR}/main.o ${OBJECTDIR}/registerBits.o ${OBJECTDIR}/floatswitch.o ${OBJECTDIR}/input.o ${OBJECTDIR}/output.o ${OBJECTDIR}/uart.o ${OBJECTDIR}/configuration.o ${OBJECTDIR}/NC.o ${OBJECTDIR}/NcApi/NcApi.o ${OBJECTDIR}/NcApi/NeoParser.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/adc.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/registerBits.o.d ${OBJECTDIR}/floatswitch.o.d ${OBJECTDIR}/input.o.d ${OBJECTDIR}/output.o.d ${OBJECTDIR}/uart.o.d ${OBJECTDIR}/configuration.o.d ${OBJECTDIR}/NC.o.d ${OBJECTDIR}/NcApi/NcApi.o.d ${OBJECTDIR}/NcApi/NeoParser.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/adc.o ${OBJECTDIR}/button.o ${OBJECTDIR}/configuration.o ${OBJECTDIR}/led.o ${OBJECTDIR}/main.o ${OBJECTDIR}/registerBits.o ${OBJECTDIR}/floatswitch.o
+OBJECTFILES=${OBJECTDIR}/adc.o ${OBJECTDIR}/main.o ${OBJECTDIR}/registerBits.o ${OBJECTDIR}/floatswitch.o ${OBJECTDIR}/input.o ${OBJECTDIR}/output.o ${OBJECTDIR}/uart.o ${OBJECTDIR}/configuration.o ${OBJECTDIR}/NC.o ${OBJECTDIR}/NcApi/NcApi.o ${OBJECTDIR}/NcApi/NeoParser.o
 
 # Source Files
-SOURCEFILES=adc.c button.c configuration.c led.c main.c registerBits.c floatswitch.c
+SOURCEFILES=adc.c main.c registerBits.c floatswitch.c input.c output.c uart.c configuration.c NC.c NcApi/NcApi.c NcApi/NeoParser.c
 
 
 
@@ -101,24 +101,6 @@ ${OBJECTDIR}/adc.o: adc.c  .generated_files/e471a33c4b20eb48b3c26075346ec0bc35b2
 	@${RM} ${OBJECTDIR}/adc.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  adc.c  -o ${OBJECTDIR}/adc.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/adc.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/button.o: button.c  .generated_files/2411b1c8b0afb68e9d87e26eb657a2e9b8a33954.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/button.o.d 
-	@${RM} ${OBJECTDIR}/button.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  button.c  -o ${OBJECTDIR}/button.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/button.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/configuration.o: configuration.c  .generated_files/86e096c7129a5da0530468be03f683572d1517d7.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/configuration.o.d 
-	@${RM} ${OBJECTDIR}/configuration.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  configuration.c  -o ${OBJECTDIR}/configuration.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/configuration.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/led.o: led.c  .generated_files/49223a84f6763ae341341c6566c0db6e7dcf27c3.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/led.o.d 
-	@${RM} ${OBJECTDIR}/led.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  led.c  -o ${OBJECTDIR}/led.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/led.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
 ${OBJECTDIR}/main.o: main.c  .generated_files/6861a7a143d26df0b46d7ee2abb9d66cc039325b.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.o.d 
@@ -137,30 +119,54 @@ ${OBJECTDIR}/floatswitch.o: floatswitch.c  .generated_files/20f4deb5f4cb7fea4710
 	@${RM} ${OBJECTDIR}/floatswitch.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  floatswitch.c  -o ${OBJECTDIR}/floatswitch.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/floatswitch.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
+${OBJECTDIR}/input.o: input.c  .generated_files/d85ddc75bac67706ac2eb5c8470ac1ba576cf75b.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/input.o.d 
+	@${RM} ${OBJECTDIR}/input.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  input.c  -o ${OBJECTDIR}/input.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/input.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/output.o: output.c  .generated_files/d4ce0417ad877f41504d1408b841beea32f47158.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/output.o.d 
+	@${RM} ${OBJECTDIR}/output.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  output.c  -o ${OBJECTDIR}/output.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/output.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/uart.o: uart.c  .generated_files/fe121e3e11a139b543aedbb7164f2d5ac330a49e.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/uart.o.d 
+	@${RM} ${OBJECTDIR}/uart.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  uart.c  -o ${OBJECTDIR}/uart.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/uart.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/configuration.o: configuration.c  .generated_files/86e096c7129a5da0530468be03f683572d1517d7.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/configuration.o.d 
+	@${RM} ${OBJECTDIR}/configuration.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  configuration.c  -o ${OBJECTDIR}/configuration.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/configuration.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/NC.o: NC.c  .generated_files/bf28b86255ca47a082285163a99cab69fa16795e.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/NC.o.d 
+	@${RM} ${OBJECTDIR}/NC.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  NC.c  -o ${OBJECTDIR}/NC.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/NC.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/NcApi/NcApi.o: NcApi/NcApi.c  .generated_files/a073f24a684e938710dcfa4fe7d006c07366f7e6.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}/NcApi" 
+	@${RM} ${OBJECTDIR}/NcApi/NcApi.o.d 
+	@${RM} ${OBJECTDIR}/NcApi/NcApi.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  NcApi/NcApi.c  -o ${OBJECTDIR}/NcApi/NcApi.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/NcApi/NcApi.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/NcApi/NeoParser.o: NcApi/NeoParser.c  .generated_files/712dd83123964dff708ea1a1b261482449f025ad.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}/NcApi" 
+	@${RM} ${OBJECTDIR}/NcApi/NeoParser.o.d 
+	@${RM} ${OBJECTDIR}/NcApi/NeoParser.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  NcApi/NeoParser.c  -o ${OBJECTDIR}/NcApi/NeoParser.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/NcApi/NeoParser.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
 else
 ${OBJECTDIR}/adc.o: adc.c  .generated_files/6b87c2fb924b69a446302dd84716589fb53309b2.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/adc.o.d 
 	@${RM} ${OBJECTDIR}/adc.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  adc.c  -o ${OBJECTDIR}/adc.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/adc.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/button.o: button.c  .generated_files/1c7e9d00ab57852c0210248c2b30d028b8974746.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/button.o.d 
-	@${RM} ${OBJECTDIR}/button.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  button.c  -o ${OBJECTDIR}/button.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/button.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/configuration.o: configuration.c  .generated_files/f4e96bd855dc3b2007f758ddc3cbca2ffb76daf8.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/configuration.o.d 
-	@${RM} ${OBJECTDIR}/configuration.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  configuration.c  -o ${OBJECTDIR}/configuration.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/configuration.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/led.o: led.c  .generated_files/5adab404b09a36b8ae8a9efbe99ac6b1e61602ff.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/led.o.d 
-	@${RM} ${OBJECTDIR}/led.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  led.c  -o ${OBJECTDIR}/led.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/led.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 ${OBJECTDIR}/main.o: main.c  .generated_files/545d104bf4b1a5d411d10119b5b4f6ec08c2b63c.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
 	@${MKDIR} "${OBJECTDIR}" 
@@ -179,6 +185,48 @@ ${OBJECTDIR}/floatswitch.o: floatswitch.c  .generated_files/95fcd11019d04cf3df80
 	@${RM} ${OBJECTDIR}/floatswitch.o.d 
 	@${RM} ${OBJECTDIR}/floatswitch.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  floatswitch.c  -o ${OBJECTDIR}/floatswitch.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/floatswitch.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/input.o: input.c  .generated_files/8ce380323aeb68713f0811bb543b0c6a7f6eeb3f.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/input.o.d 
+	@${RM} ${OBJECTDIR}/input.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  input.c  -o ${OBJECTDIR}/input.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/input.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/output.o: output.c  .generated_files/4de4dc562fa07ac3d447eab60645db83003fe0af.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/output.o.d 
+	@${RM} ${OBJECTDIR}/output.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  output.c  -o ${OBJECTDIR}/output.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/output.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/uart.o: uart.c  .generated_files/c635497b3f6be4e8ffc6dcb7b16afbb6a9aaae18.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/uart.o.d 
+	@${RM} ${OBJECTDIR}/uart.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  uart.c  -o ${OBJECTDIR}/uart.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/uart.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/configuration.o: configuration.c  .generated_files/f4e96bd855dc3b2007f758ddc3cbca2ffb76daf8.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/configuration.o.d 
+	@${RM} ${OBJECTDIR}/configuration.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  configuration.c  -o ${OBJECTDIR}/configuration.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/configuration.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/NC.o: NC.c  .generated_files/e39c4b49ae718a7efa9f07757690ec9d35558db2.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/NC.o.d 
+	@${RM} ${OBJECTDIR}/NC.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  NC.c  -o ${OBJECTDIR}/NC.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/NC.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/NcApi/NcApi.o: NcApi/NcApi.c  .generated_files/580aae44bab5b698294de725709fd94ac5fd082e.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}/NcApi" 
+	@${RM} ${OBJECTDIR}/NcApi/NcApi.o.d 
+	@${RM} ${OBJECTDIR}/NcApi/NcApi.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  NcApi/NcApi.c  -o ${OBJECTDIR}/NcApi/NcApi.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/NcApi/NcApi.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/NcApi/NeoParser.o: NcApi/NeoParser.c  .generated_files/a62021ae2bfb27f54ccd6ee51a4d040dceec9b15.flag .generated_files/647cdef09a74fadadc5113b1ead3e23ada6a50f5.flag
+	@${MKDIR} "${OBJECTDIR}/NcApi" 
+	@${RM} ${OBJECTDIR}/NcApi/NeoParser.o.d 
+	@${RM} ${OBJECTDIR}/NcApi/NeoParser.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  NcApi/NeoParser.c  -o ${OBJECTDIR}/NcApi/NeoParser.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/NcApi/NeoParser.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
 

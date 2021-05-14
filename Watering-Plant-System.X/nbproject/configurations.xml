@@ -5,12 +5,16 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>adc.h</itemPath>
-      <itemPath>button.h</itemPath>
-      <itemPath>configuration.h</itemPath>
       <itemPath>constants.h</itemPath>
-      <itemPath>led.h</itemPath>
       <itemPath>registerBits.h</itemPath>
       <itemPath>floatswitch.h</itemPath>
+      <itemPath>input.h</itemPath>
+      <itemPath>output.h</itemPath>
+      <itemPath>uart.h</itemPath>
+      <itemPath>configuration.h</itemPath>
+      <itemPath>NC.h</itemPath>
+      <itemPath>NcApi/NeoParser.h</itemPath>
+      <itemPath>NcApi/NcApi.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -20,12 +24,16 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>adc.c</itemPath>
-      <itemPath>button.c</itemPath>
-      <itemPath>configuration.c</itemPath>
-      <itemPath>led.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>registerBits.c</itemPath>
       <itemPath>floatswitch.c</itemPath>
+      <itemPath>input.c</itemPath>
+      <itemPath>output.c</itemPath>
+      <itemPath>uart.c</itemPath>
+      <itemPath>configuration.c</itemPath>
+      <itemPath>NC.c</itemPath>
+      <itemPath>NcApi/NcApi.c</itemPath>
+      <itemPath>NcApi/NeoParser.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

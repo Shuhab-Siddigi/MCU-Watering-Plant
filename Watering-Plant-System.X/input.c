@@ -6,7 +6,7 @@
  */
 
 
-#include "button.h"
+#include "input.h"
 
 void init_input(INPUT input)
 {
@@ -15,12 +15,12 @@ void init_input(INPUT input)
 
 void input_SetDigitalInput(INPUT input)
 {
-    Set_PortBitState(input.TRIS, input.BTN, INPUT);
+    Set_PortBitState(input.TRIS, input.INPUT, 1);
     //*(input.PORT) |= (INPUT << input.PIN);
 }
 
 uint16_t input_GetValue(INPUT input)
 {
-    return read_PortBit(input.PORT, input.PIN);
+    return Read_PortBit(input.PORT, input.INPUT);
     //return *(input.PORT) |= (input.PIN);
 }
