@@ -50,6 +50,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+.generated_files/
 /Watering-Plant-System.X/build/
 /Watering-Plant-System.X/dist/
 /ADC-MCC.X/build/
