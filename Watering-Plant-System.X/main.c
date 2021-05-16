@@ -170,12 +170,17 @@ int main()
     return 1;
 }*/
 
-int adcHigh = 900;
-int adcLow = 300;
+
+int adcHigh = 800;
+int adcLow = 40;
 int adcFlag = 0;
-int adcValue = 0;
-double adcConverted = 0;
+int adcValue;
+double adcConverted;
 char adcString[5];
+
+char byte = 0xFF;
+uint8_t byteArray[3];
+int byteArrayIndex = 0;
 
 int main(void)
 {
@@ -190,14 +195,17 @@ int main(void)
     
     while (1)
     {
-        adcValue = ADC_GetConversion(MOISTURESENSOR);
-        adcConverted = ((float)adcValue/1024)*100;
+        
+        //adcValue = ADC_GetConversion(MOISTURESENSOR);
+        adcValue = ADC_GetConversion(POT);
+        adcConverted = ((double)adcValue/1024)*100;
+
         sprintf(adcString, "%.0f\n\r\0", adcConverted);
         
-        if(adcValue <= adcLow)
+        if(adcValue < adcLow)
         {
             adcFlag = 1;
-        } else if(adcValue >= adcHigh)
+        } else if(adcValue > adcHigh)
         {
             adcFlag = 0;
         }
@@ -210,6 +218,18 @@ int main(void)
             output_SetLow(motor);
         }
         UART_WriteMessage(adcString);
+        while(byteArrayIndex != 2){
+            byte = UART1_Read();
+            //byte = U1RXREG;
+            if(byte > 33 && byte < 58){
+                byteArray[byteArrayIndex] = byte;
+                byteArrayIndex++;
+            }
+        }
+        byteArray[3] = '\0';
+        byteArray[0] = (byteArray[0]-48)*10;
+        byteArray[1] = byteArray[1]-48;
+        adcLow = byteArray[0] + byteArray[1];
         __delay_ms(600);
     }
 
