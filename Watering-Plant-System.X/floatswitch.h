@@ -2,7 +2,8 @@
 #define	FLOATSWITCH_H_
 
 
-#include "constants.h"
+//#include "constants.h"
+#include "registerBits.h"
 
 
 void set_floatswitchCallback(void(*cb )());

@@ -59,7 +59,7 @@
 #endif
     
 int UART_ReadFlag();
-void UART1_WriteMessage( uint8_t *buffer);
+void UART_WriteMessage( uint8_t *buffer);
 
 /**
   Section: UART1 Driver Routines
@@ -91,7 +91,7 @@ void UART1_WriteMessage( uint8_t *buffer);
 
 */
 
-void UART1_Initialize(void);
+void UART_Initialize(void);
 
 /**
   @Summary

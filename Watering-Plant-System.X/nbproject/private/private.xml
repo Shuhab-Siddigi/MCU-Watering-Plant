@@ -3,14 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/registerBits.c</file>
-            <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/uart1.c</file>
-            <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/adc.c</file>
+            <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/output.c</file>
             <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/main.c</file>
-            <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/NcApi/NeoParser.h</file>
+            <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/floatswitch.h</file>
+            <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/adc.h</file>
+            <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/nbproject/Makefile-default.mk</file>
+            <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/registerBits.c</file>
+            <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/mcc_generated_files/mcc.h</file>
+            <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/nbproject/Makefile-impl.mk</file>
+            <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/adc.c</file>
             <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/input.h</file>
-            <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/NC.c</file>
+            <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/floatswitch.c</file>
+            <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/configuration.h</file>
+            <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/configuration.c</file>
             <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/input.c</file>
+            <file>file:/C:/Users/nico4/source/repos/MCU-Watering-Plant/Watering-Plant-System.X/registerBits.h</file>
         </group>
     </open-files>
 </project-private>

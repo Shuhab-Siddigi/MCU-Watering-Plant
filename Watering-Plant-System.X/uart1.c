@@ -117,6 +117,26 @@ void UART_WriteMessage( uint8_t *buffer)
 
 void UART_Initialize(void)
 {
+    
+    __builtin_write_OSCCONL(OSCCON & 0xbf); // unlock PPS
+
+    RPINR18bits.U1RXR = 0x0005;    //RB5->UART1:U1RX
+    RPOR3bits.RP6R = 0x0003;    //RB6->UART1:U1TX
+
+    __builtin_write_OSCCONL(OSCCON | 0x40); // lock PPS
+    
+    //    UERI: U1E - UART1 Error
+    //    Priority: 1
+    IPC16bits.U1ERIP = 1;
+    //    UTXI: U1TX - UART1 Transmitter
+    //    Priority: 1
+    IPC3bits.U1TXIP = 1;
+    //    URXI: U1RX - UART1 Receiver
+    //    Priority: 1
+    IPC2bits.U1RXIP = 1;
+        
+    
+    
     IEC0bits.U1TXIE = 0;
     IEC0bits.U1RXIE = 0;
 

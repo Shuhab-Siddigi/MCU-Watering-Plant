@@ -4,6 +4,12 @@
 #include "floatswitch.h"
 #include "adc.h"
 #include "uart1.h"
+#include <stdio.h>
+ #include <stdlib.h>
+
+//#include "mcc_generated_files/system.h"
+//#include "mcc_generated_files/uart1.h"
+
 
 /*BTN btn1;
 LED led1;
@@ -58,15 +64,23 @@ int main()
 
 #include <libpic30.h>
         
-OUTPUT motor = {&TRISB, &LATB, 10};
+OUTPUT motor = {&TRISB, &LATB, 3};
 OUTPUT led1 = {&TRISA, &LATA, 10}; // PORTx, LATx, Dx
+INPUT floatswitch = {&TRISB, &PORTB, 10};
 
-int floatswitchFlag = 0;
+int floatswitchFlag;
 
 void floatswitchCB()
 {
     floatswitchFlag ^= 1;
-    output_Toggle(led1);
+    if(floatswitchFlag == 0)
+    {
+        output_SetLow(led1);
+    }
+    else
+    {
+        output_Toggle(led1);
+    }
 }
 
 /*void ReadCallback(uint8_t n, uint8_t * msg, uint8_t msgLength)
@@ -79,38 +93,64 @@ void floatswitchCB()
 }
 */
 
+/*
 int main()
 {
-    //init_output(motor);
-    //init_output(led1);
-    //init_floatswitch(&floatswitchCB);
+    init_output(motor);
+    init_output(led1);
+    init_floatswitch(&floatswitchCB);
+    init_input(floatswitch);
+    init_adc();
+    SYSTEM_Initialize();
+    //UART_Initialize();
+
+    floatswitchFlag = input_GetValue(floatswitch) == 1 ? 1 : 0;
+    
+    while (1)
+    {
+        
+        if(floatswitchFlag == 1 && ADC_GetConversion(MOISTURESENSOR))
+        {
+            output_SetHigh(motor);
+        }
+        else
+        {
+            output_SetLow(motor);
+        }
+    }
+
+    return 0;
+}
+*/
+
+int main(void)
+{
+    int input = 0;
+    uint8_t byte = 0xFF;
+    // initialize the device
+    //SYSTEM_Initialize();
     UART_Initialize();
 
     while (1)
     {
-        uint8_t byte = 0xFF;
-        
-        if(UART_ReadFlag())
+        //inputLength = UART1_RxDataAvailable();
+        /*if(UART_ReadFlag())
         {
             while(byte != '\r')
             {
                 byte = UART1_Read();
             }
             byte = 0xFF;
-            UART_WriteMessage("hello\r");
+            //UART_WriteMessage("hello\r");
+            UART_WriteMessage("10\n");
         }
-        /*if(floatswitchFlag == 0)
-        {
-            //output_SetHigh(motor);
-        }
-        else
-        {
-            output_SetLow(motor);
-        }
-        
-        //__delay_ms(300);
         */
+        UART_WriteMessage("20");
+        UART_WriteMessage("20\r");
+        UART_WriteMessage("30\n");
+        UART_WriteMessage("40\n\r");
+        __delay_ms(500);
     }
 
-    return 0;
+    return 1;
 }
