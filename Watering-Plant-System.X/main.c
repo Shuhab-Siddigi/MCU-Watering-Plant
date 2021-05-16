@@ -123,7 +123,7 @@ int main()
 }
 */
 
-int main(void)
+/*int main(void)
 {
     int input = 0;
     uint8_t byte = 0xFF;
@@ -134,7 +134,7 @@ int main(void)
     while (1)
     {
         //inputLength = UART1_RxDataAvailable();
-        /*if(UART_ReadFlag())
+        if(UART_ReadFlag())
         {
             while(byte != '\r')
             {
@@ -144,12 +144,73 @@ int main(void)
             //UART_WriteMessage("hello\r");
             UART_WriteMessage("10\n");
         }
-        */
-        UART_WriteMessage("20");
+        UART_WriteMessage("20 ");
         UART_WriteMessage("20\r");
         UART_WriteMessage("30\n");
         UART_WriteMessage("40\n\r");
         __delay_ms(500);
+    }
+
+    return 1;
+}*/
+
+/*int main(void)
+{
+    UART_Initialize();
+
+    while (1)
+    {
+        UART_WriteMessage("10");
+        UART_WriteMessage("20\r");
+        UART_WriteMessage("30\n");
+        UART_WriteMessage("40\n\r");
+        __delay_ms(500);
+    }
+
+    return 1;
+}*/
+
+int adcHigh = 900;
+int adcLow = 300;
+int adcFlag = 0;
+int adcValue = 0;
+double adcConverted = 0;
+char adcString[5];
+
+int main(void)
+{
+    init_output(motor);
+    init_output(led1);
+    init_floatswitch(&floatswitchCB);
+    init_input(floatswitch);
+    init_adc();
+    UART_Initialize();
+
+    floatswitchFlag = input_GetValue(floatswitch) == 1 ? 1 : 0;
+    
+    while (1)
+    {
+        adcValue = ADC_GetConversion(MOISTURESENSOR);
+        adcConverted = ((float)adcValue/1024)*100;
+        sprintf(adcString, "%.0f\n\r\0", adcConverted);
+        
+        if(adcValue <= adcLow)
+        {
+            adcFlag = 1;
+        } else if(adcValue >= adcHigh)
+        {
+            adcFlag = 0;
+        }
+        if(floatswitchFlag == 1 && adcFlag == 1)
+        {
+            output_SetHigh(motor);
+        }
+        else 
+        {
+            output_SetLow(motor);
+        }
+        UART_WriteMessage(adcString);
+        __delay_ms(600);
     }
 
     return 1;
